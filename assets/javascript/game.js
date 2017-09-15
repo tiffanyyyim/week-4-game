@@ -1,26 +1,83 @@
 //creates variable for the game
-var crystalOne = [1,2,3,4,5,6,7,8,9,10,11,12];
-var crystalTwo = [1,2,3,4,5,6,7,8,9,10,11,12];
-var crystalThree = [1,2,3,4,5,6,7,8,9,10,11,12];
-var crystalFour = [1,2,3,4,5,6,7,8,9,10,11,12];
+var crystalOne = 10;
+var crystalTwo = 1;
+var crystalThree = 3;
+var crystalFour = 7;
 var randomNumberOptions = [];
-var currentScore = "";
+var currentScore = 0;
 var wins = 0;
 var losses = 0;
+var randomNumber = 30;
 
-//$(document).ready(function(){
+
 
 //fills in randonNumber array from 19 to 120
-for (var i = 19; i <= 120; i++){
+/*for (var i = 19; i <= 120; i++){
     randomNumberOptions.push(i);
   }
 
 //select a number from randomNumberOptions array and insert to getThisNumber variable
 var getThisNumber = randomNumberOptions[Math.floor(Math.random() * randomNumberOptions.length)];
 console.log(getThisNumber);
-
+*/
 //function is run whenever user clicks on any crystal picture 
-    //sets a random value to each crystal picture 
+
+    //sets a random value to crystal one image
+  
+ function calculate(){
+      if (currentScore == randomNumber){
+          document.write("you win");
+      }else if (currentScore > randomNumber){
+              document.write("you lose");
+        }
+         
+      };
+
+
+$(document).ready(function(){
+      
+            
+          $("#crystalone").on('click', 'img', function(){
+            console.log("click");            
+            currentScore = currentScore + crystalOne;
+                         $("#currenttotal").html(currentScore);
+            console.log(currentScore);
+              calculate();
+                        })
+  
+      $("#crystaltwo").on('click', 'img', function(){
+            console.log("click");            
+            currentScore = currentScore + crystalTwo;
+                         $("#currenttotal").html(currentScore);
+            console.log(currentScore);
+          
+                        })
+      
+      $("#crystalthree").on('click', 'img', function(){
+            console.log("click");            
+            currentScore = currentScore + crystalThree;
+                         $("#currenttotal").html(currentScore);
+            console.log(currentScore);
+                        })
+      
+      $("#crystalfour").on('click', 'img', function(){
+            console.log("click");            
+            currentScore = currentScore + crystalFour;
+                         $("#currenttotal").html(currentScore);
+            console.log(currentScore);
+                        })
+      $("#randomnumber").html(randomNumber);
+      
+     
+  
+  
+  
+  
+  
+  });
+    
+    
+   
     //determines which picture was selected
     //places that crystal's numeric value unto the current total amount line 
         //checks if the current total amount is equal to getThisNumber
@@ -33,7 +90,7 @@ console.log(getThisNumber);
 
 
 //prints getThisNumber onto the webpage
-$("#random-number").html(getThisNumber);
+//$("#random-number").html(getThisNumber);
     
     
     
