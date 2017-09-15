@@ -1,13 +1,12 @@
 //creates variable for the game
-var crystalOne = 10;
-var crystalTwo = 1;
-var crystalThree = 3;
-var crystalFour = 7;
-var randomNumberOptions = [];
+var crystalOne = Math.ceil(Math.random() * 12);
+var crystalTwo = Math.ceil(Math.random() * 12);
+var crystalThree = Math.ceil(Math.random() * 12);
+var crystalFour = Math.ceil(Math.random() * 12);
 var currentScore = 0;
 var wins = 0;
 var losses = 0;
-var randomNumber = 30;
+var randomNumber = (Math.ceil(Math.random() * 60))+40;
 
 
 
@@ -50,7 +49,7 @@ $(document).ready(function(){
             currentScore = currentScore + crystalTwo;
                          $("#currenttotal").html(currentScore);
             console.log(currentScore);
-          
+           calculate();
                         })
       
       $("#crystalthree").on('click', 'img', function(){
@@ -58,6 +57,7 @@ $(document).ready(function(){
             currentScore = currentScore + crystalThree;
                          $("#currenttotal").html(currentScore);
             console.log(currentScore);
+          calculate();
                         })
       
       $("#crystalfour").on('click', 'img', function(){
@@ -65,6 +65,7 @@ $(document).ready(function(){
             currentScore = currentScore + crystalFour;
                          $("#currenttotal").html(currentScore);
             console.log(currentScore);
+          calculate();
                         })
       $("#randomnumber").html(randomNumber);
       
